@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.hero-gradient {
+    background: linear-gradient(135deg, #ff4629 0%, #d23239 100%);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card {
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    backdrop-filter: blur(10px);
+}
+
+.faq-item {
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #ff4629, #d23239);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(210, 50, 57, 0.4);
+}
+
+.btn-secondary {
+    border: 2px solid #ff4629;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #ff4629;
+    color: white;
+}
