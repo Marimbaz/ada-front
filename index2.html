@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.D.A. - Alerta de Desaparecidos em Angola</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap');
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .hero-pattern {
+            background: 
+                linear-gradient(135deg, rgba(255, 70, 41, 0.9) 0%, rgba(210, 50, 57, 0.9) 100%),
+                url('assets/img/hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .feature-card {
+            border-left: 4px solid #ff4629;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, #ff4629, #d23239);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(210, 50, 57, 0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(210, 50, 57, 0.3);
+        }
+        
+        .btn-outline {
+            border: 2px solid #ff4629;
+            color: #ff4629;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            background: #ff4629;
+            color: white;
+        }
+        
+        .impact-item {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .impact-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: #ff4629;
+            border-radius: 50%;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .faq-toggle {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-toggle.active {
+            transform: rotate(180deg);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff4629;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4 sm:px-10 md:px-20">
+            <div class="flex items-center justify-between">
+
+                <div class="flex items-center w-1/3 md:w-1/6">
+                    <img src="assets/img/ada.png" alt="Logo" class="w-5/6 md:w-3/5">
+                </div>
+                
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-gray-700 font-medium">Sobre</a>
+                    <a href="#how-it-works" class="nav-link text-gray-700 font-medium">Como Funciona</a>
+                    <a href="#impact" class="nav-link text-gray-700 font-medium">Impacto</a>
+                    <a href="#join" class="nav-link text-gray-700 font-medium">Participe</a>
+                </nav>
+                
+                <a href="#join" class="btn-primary text-white px-6 py-2 rounded-lg font-medium flex items-center">
+                    <i class="fab fa-whatsapp mr-2"></i> Entrar no Canal
+                </a>
+                
+                <button class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern text-white">
+        <div class="container mx-auto px-6 md:px-30 py-24 md:py-32">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Juntos podemos trazer mais famílias de volta para casa</h1>
+                <p class="text-lg md:text-xl mb-8 opacity-90">O Alerta de Desaparecidos em Angola mobiliza comunidades inteiras para ajudar na busca por pessoas desaparecidas através de uma rede de voluntários comprometidos.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#join" class="btn-primary text-white px-6 py-3 rounded-lg font-medium text-center">
+                        <i class="fas fa-hands-helping mr-2"></i> Junte-se a Nós
+                    </a>
+                    <a href="#how-it-works" class="bg-white text-[#d23239] px-6 py-3 rounded-lg font-medium text-center flex items-center justify-center">
+                        <i class="fas  fa-info-circle mr-2"></i> Como funciona?
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="assets/img/Missing poster.png" alt="Comunidade unida" class="rounded-xl shadow-lg w-full h-auto">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Sobre o A.D.A.</h2>
+                    <p class="text-gray-600 mb-4">Em Angola, centenas de famílias enfrentam o desaparecimento de entes queridos a cada ano. O <span class="font-bold text-[#d23239]">Alerta de Desaparecidos em Angola (A.D.A.)</span> foi criado para mudar essa realidade.</p>
+                    <p class="text-gray-600 mb-6">Nossa plataforma conecta voluntários, autoridades e comunidades em um sistema de alerta rápido que já ajudou a reunir dezenas de famílias.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="feature-card bg-gray-50 p-6 rounded-lg">
+                            <div class="w-12 h-12 rounded-full bg-[#ff4629] text-white flex items-center justify-center text-xl mb-4">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2 text-gray-800">Missão</h3>
+                            <p class="text-gray-600 text-sm">Reduzir o tempo entre desaparecimento e início das buscas através de alertas comunitários.</p>
+                        </div>
+                        
+                        <div class="feature-card bg-gray-50 p-6 rounded-lg">
+                            <div class="w-12 h-12 rounded-full bg-[#d23239] text-white flex items-center justify-center text-xl mb-4">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2 text-gray-800">Valores</h3>
+                            <p class="text-gray-600 text-sm">Solidariedade, ação rápida e compromisso com cada família angolana.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Como o A.D.A. Funciona</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Um sistema simples em três etapas que faz toda a diferença</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 rounded-full bg-[#ff4629] text-white flex items-center justify-center text-2xl mb-6 mx-auto">
+                        <span class="font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-800">Reporte</h3>
+                    <p class="text-gray-600 text-center">A família entra em contato com nossa equipe via WhatsApp para reportar o desaparecimento com todas as informações disponíveis.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 rounded-full bg-[#d23239] text-white flex items-center justify-center text-2xl mb-6 mx-auto">
+                        <span class="font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-800">Verificação</h3>
+                    <p class="text-gray-600 text-center">Nossa equipe verifica as informações e prepara um alerta detalhado com foto e descrição da pessoa desaparecida.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-r from-[#ff4629] to-[#d23239] text-white flex items-center justify-center text-2xl mb-6 mx-auto">
+                        <span class="font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-800">Mobilização</h3>
+                    <p class="text-gray-600 text-center">O alerta é enviado para todos os voluntários na região, que compartilham e ajudam nas buscas locais.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <a href="wa.me/976042157" class="btn-outline px-8 py-3 rounded-lg font-medium inline-flex items-center">
+                    <i class="fas fa-alert-circle mr-2"></i>Reportar Desaparecimento
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-16 bg-gradient-to-r from-[#ff4629] to-[#d23239] text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Nosso Impacto em Números</h2>
+                <p class="max-w-2xl mx-auto opacity-90">Cada número representa uma vida e uma família que recuperou a esperança</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-2">200+</div>
+                    <div class="font-medium">Casos Atendidos</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-2">92%</div>
+                    <div class="font-medium">Taxa de Sucesso</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-2">24</div>
+                    <div class="font-medium">Horas Média de Resolução</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-2">3K+</div>
+                    <div class="font-medium">Voluntários Ativos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Histórias que nos Movem</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Depoimentos reais de famílias e voluntários impactados pelo A.D.A.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8 rounded-xl shadow-md relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-[#ff4629] text-white flex items-center justify-center text-xl">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">"Meu filho desapareceu após sair da escola. Em menos de 3 horas, graças ao alerta do A.D.A., ele foi encontrado por um voluntário que reconheceu sua descrição. Eternamente grata!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 mr-4"></div>
+                        <div>
+                            <div class="font-bold text-gray-800">Maria K.</div>
+                            <div class="text-sm text-gray-600">Mãe, Luanda</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                 <div class="testimonial-card p-8 rounded-xl shadow-md relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-[#d23239] text-white flex items-center justify-center text-xl">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">"Como voluntário, já participei de 12 buscas e em 9 delas conseguimos resultados positivos. Saber que posso fazer a diferença na vida de alguém é a maior recompensa."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 mr-4"></div>
+                        <div>
+                            <div class="font-bold text-gray-800">Manuel D.</div>
+                            <div class="text-sm text-gray-600">Voluntário, Benguela</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="join" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-gradient-to-b from-[#ff4629] to-[#d23239] p-8 text-white flex flex-col justify-center">
+                        <h2 class="text-3xl font-bold mb-4">Faça parte desta rede</h2>
+                        <p class="mb-6">Junte-se a milhares de angolanos que estão fazendo a diferença em suas comunidades.</p>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-volume text-2xl mr-4"></i>
+                            <div>
+                                <div class="font-bold">+244 976 042 157</div>
+                                <div class="text-sm">Nosso WhatsApp oficial</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-xl font-bold mb-6 text-gray-800">Como você pode ajudar?</h3>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-start mb-4">
+                                <div class="w-10 h-10 rounded-full bg-[#ff4629] text-white flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Receber alertas</h4>
+                                    <p class="text-sm text-gray-600">Entre no canal do WhatsApp e receber alertas na sua região e ajudar compartilhando informações.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start mb-4">
+                                <div class="w-10 h-10 rounded-full bg-[#d23239] text-white flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Ser voluntário</h4>
+                                    <p class="text-sm text-gray-600">Participe ativamente das buscas e ações de conscientização.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-[#ff4629] to-[#d23239] text-white flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-share-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Divulgar</h4>
+                                    <p class="text-sm text-gray-600">Compartilhe nosso trabalho e ajude a expandir nossa rede.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="https://whatsapp.com/channel/0029Vb0XkPhBqbr2HOQPQd0I" class="btn-primary text-white px-6 py-3 rounded-full font-medium w-full text-center block">
+                            <i class="fab fa-whatsapp mr-2"></i> Entrar no Canal
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Perguntas Frequentes</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Tire suas dúvidas sobre como participar ou solicitar ajuda</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item py-5">
+                    <button class="w-full flex justify-between items-center text-left font-medium text-gray-800">
+                        <span>Como posso reportar um desaparecimento?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </button>
+                    <div class="mt-3 text-gray-600 hidden">
+                        <p>Entre em contato imediatamente com nosso WhatsApp oficial (+244 123 456 789) com todas as informações disponíveis: nome completo, foto recente, última localização conhecida, vestuário e quaisquer detalhes relevantes. Nossa equipe irá guiá-lo através do processo.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item py-5">
+                    <button class="w-full flex justify-between items-center text-left font-medium text-gray-800">
+                        <span>Quais os requisitos para ser voluntário?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </button>
+                    <div class="mt-3 text-gray-600 hidden">
+                        <p>Qualquer pessoa maior de 18 anos pode se voluntariar. Não é necessário experiência prévia - oferecemos treinamento e orientações sobre como agir em diferentes situações. O mais importante é o compromisso com a causa e disponibilidade para ajudar quando necessário.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item py-5">
+                    <button class="w-full flex justify-between items-center text-left font-medium text-gray-800">
+                        <span>O A.D.A. cobra pelos seus serviços?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </button>
+                    <div class="mt-3 text-gray-600 hidden">
+                        <p>Não, todos os nossos serviços são completamente gratuitos para as famílias. Somos mantidos por doações e trabalho voluntário. Acreditamos que ajudar famílias em momentos tão difíceis é um dever social e não deve ter custos.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item py-5">
+                    <button class="w-full flex justify-between items-center text-left font-medium text-gray-800">
+                        <span>Como o A.D.A. trabalha com as autoridades?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </button>
+                    <div class="mt-3 text-gray-600 hidden">
+                        <p>Trabalhamos em estreita colaboração com as autoridades locais. Nossa função é complementar os esforços oficiais, mobilizando a comunidade para aumentar as chances de localização rápida. Sempre orientamos as famílias a registrar ocorrência policial e mantemos comunicação constante com as autoridades durante as buscas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="assets/img/ada-white.png" alt="" class="w-1/3">
+                    </div>
+                    <p class="text-gray-400 mb-6">Rede comunitária de alerta e busca por desaparecidos em Angola.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#ff4629] flex items-center justify-center transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#ff4629] flex items-center justify-center transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#ff4629] flex items-center justify-center transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Links Úteis</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Como Reportar</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Torne-se Voluntário</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Histórias de Sucesso</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contato</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">+244 976 042 157</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-whatsapp mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">WhatsApp</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">contato@ada.org.ao</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="hidden">
+                    <h3 class="text-lg font-bold mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Receba atualizações sobre nosso trabalho.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-[#ff4629] px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 A.D.A. Todos os direitos reservados.</p>
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">Developed by <a href="">Marimba'z</a></p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-white text-sm">Termos de Uso</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.faq-toggle');
+                
+                // Toggle content visibility
+                content.classList.toggle('hidden');
+                
+                // Toggle icon rotation
+                icon.classList.toggle('active');
+                
+                // Close other open FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.querySelector('div').classList.add('hidden');
+                        item.querySelector('.faq-toggle').classList.remove('active');
+                    }
+                });
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
